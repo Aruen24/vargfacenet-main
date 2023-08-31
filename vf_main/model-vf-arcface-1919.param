@@ -1,0 +1,488 @@
+7767517
+486 592
+Input            data                             0 1 data
+BinaryOp         underscorencnn_0_minusscalar0    1 1 data underscorencnn_0_minusscalar0 0=1 1=1 2=1.275000e+02
+BinaryOp         underscorencnn_1_mulscalar0      1 1 underscorencnn_0_minusscalar0 underscorencnn_1_mulscalar0 0=2 1=1 2=7.812500e-03
+Convolution      vargface_head_conv1              1 1 underscorencnn_1_mulscalar0 vargface_head_conv1 0=40 1=3 11=3 3=1 13=1 4=1 14=1 5=0 6=1080
+BatchNorm        vargface_head_conv1_bn           1 1 vargface_head_conv1 vargface_head_conv1_bn 0=40
+Split            splitncnn_0                      1 2 vargface_head_conv1_bn vargface_head_conv1_bn_splitncnn_0 vargface_head_conv1_bn_splitncnn_1
+Sigmoid          vargface_head_conv1_act          1 1 vargface_head_conv1_bn_splitncnn_1 vargface_head_conv1_act
+BinaryOp         underscorencnn_2_mul0            2 1 vargface_head_conv1_bn_splitncnn_0 vargface_head_conv1_act underscorencnn_2_mul0 0=2
+Split            splitncnn_1                      1 2 underscorencnn_2_mul0 underscorencnn_2_mul0_splitncnn_0 underscorencnn_2_mul0_splitncnn_1
+ConvolutionDepthWise vargface_head_head_pooling_sep1_data_conv2d_depthwise 1 1 underscorencnn_2_mul0_splitncnn_1 vargface_head_head_pooling_sep1_data_conv2d_depthwise 0=40 1=3 11=3 2=1 12=1 3=2 13=2 4=1 14=1 5=0 6=360 7=40
+BatchNorm        vargface_head_head_pooling_sep1_data_conv2d_depthwise_bn 1 1 vargface_head_head_pooling_sep1_data_conv2d_depthwise vargface_head_head_pooling_sep1_data_conv2d_depthwise_bn 0=40
+Split            splitncnn_2                      1 2 vargface_head_head_pooling_sep1_data_conv2d_depthwise_bn vargface_head_head_pooling_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_head_head_pooling_sep1_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_head_head_pooling_sep1_data_conv2d_depthwise_act 1 1 vargface_head_head_pooling_sep1_data_conv2d_depthwise_bn_splitncnn_1 vargface_head_head_pooling_sep1_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_3_mul2            2 1 vargface_head_head_pooling_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_head_head_pooling_sep1_data_conv2d_depthwise_act underscorencnn_3_mul2 0=2
+Convolution      vargface_head_head_pooling_sep1_data_conv2d_pointwise 1 1 underscorencnn_3_mul2 vargface_head_head_pooling_sep1_data_conv2d_pointwise 0=40 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=1600
+BatchNorm        vargface_head_head_pooling_sep1_data_conv2d_pointwise_bn 1 1 vargface_head_head_pooling_sep1_data_conv2d_pointwise vargface_head_head_pooling_sep1_data_conv2d_pointwise_bn 0=40
+Split            splitncnn_3                      1 2 vargface_head_head_pooling_sep1_data_conv2d_pointwise_bn vargface_head_head_pooling_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_head_head_pooling_sep1_data_conv2d_pointwise_bn_splitncnn_1
+Sigmoid          vargface_head_head_pooling_sep1_data_conv2d_pointwise_act 1 1 vargface_head_head_pooling_sep1_data_conv2d_pointwise_bn_splitncnn_1 vargface_head_head_pooling_sep1_data_conv2d_pointwise_act
+BinaryOp         underscorencnn_4_mul3            2 1 vargface_head_head_pooling_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_head_head_pooling_sep1_data_conv2d_pointwise_act underscorencnn_4_mul3 0=2
+ConvolutionDepthWise vargface_head_head_pooling_sep2_data_conv2d_depthwise 1 1 underscorencnn_4_mul3 vargface_head_head_pooling_sep2_data_conv2d_depthwise 0=40 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=360 7=40
+BatchNorm        vargface_head_head_pooling_sep2_data_conv2d_depthwise_bn 1 1 vargface_head_head_pooling_sep2_data_conv2d_depthwise vargface_head_head_pooling_sep2_data_conv2d_depthwise_bn 0=40
+Split            splitncnn_4                      1 2 vargface_head_head_pooling_sep2_data_conv2d_depthwise_bn vargface_head_head_pooling_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_head_head_pooling_sep2_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_head_head_pooling_sep2_data_conv2d_depthwise_act 1 1 vargface_head_head_pooling_sep2_data_conv2d_depthwise_bn_splitncnn_1 vargface_head_head_pooling_sep2_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_5_mul4            2 1 vargface_head_head_pooling_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_head_head_pooling_sep2_data_conv2d_depthwise_act underscorencnn_5_mul4 0=2
+Convolution      vargface_head_head_pooling_sep2_data_conv2d_pointwise 1 1 underscorencnn_5_mul4 vargface_head_head_pooling_sep2_data_conv2d_pointwise 0=40 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=1600
+BatchNorm        vargface_head_head_pooling_sep2_data_conv2d_pointwise_bn 1 1 vargface_head_head_pooling_sep2_data_conv2d_pointwise vargface_head_head_pooling_sep2_data_conv2d_pointwise_bn 0=40
+Split            splitncnn_5                      1 2 vargface_head_head_pooling_sep2_data_conv2d_pointwise_bn vargface_head_head_pooling_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_head_head_pooling_sep2_data_conv2d_pointwise_bn_splitncnn_1
+Pooling          vargface_head_head_pooling_se_pool1 1 1 vargface_head_head_pooling_sep2_data_conv2d_pointwise_bn_splitncnn_1 vargface_head_head_pooling_se_pool1 0=1 4=1 5=1 6=0
+Convolution      vargface_head_head_pooling_se_conv1 1 1 vargface_head_head_pooling_se_pool1 vargface_head_head_pooling_se_conv1 0=10 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=400
+Split            splitncnn_6                      1 2 vargface_head_head_pooling_se_conv1 vargface_head_head_pooling_se_conv1_splitncnn_0 vargface_head_head_pooling_se_conv1_splitncnn_1
+Sigmoid          vargface_head_head_pooling_se_act1 1 1 vargface_head_head_pooling_se_conv1_splitncnn_1 vargface_head_head_pooling_se_act1
+BinaryOp         underscorencnn_6_mul5            2 1 vargface_head_head_pooling_se_conv1_splitncnn_0 vargface_head_head_pooling_se_act1 underscorencnn_6_mul5 0=2
+Convolution      vargface_head_head_pooling_se_conv2 1 1 underscorencnn_6_mul5 vargface_head_head_pooling_se_conv2 0=40 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=400
+Sigmoid          vargface_head_head_pooling_se_sigmoid 1 1 vargface_head_head_pooling_se_conv2 vargface_head_head_pooling_se_sigmoid
+BinaryOp         broadcast_mul0                   2 1 vargface_head_head_pooling_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_head_head_pooling_se_sigmoid broadcast_mul0 0=2
+ConvolutionDepthWise vargface_head_head_pooling_shortcut_conv2d_depthwise 1 1 underscorencnn_2_mul0_splitncnn_0 vargface_head_head_pooling_shortcut_conv2d_depthwise 0=40 1=3 11=3 2=1 12=1 3=2 13=2 4=1 14=1 5=0 6=360 7=40
+BatchNorm        vargface_head_head_pooling_shortcut_conv2d_depthwise_bn 1 1 vargface_head_head_pooling_shortcut_conv2d_depthwise vargface_head_head_pooling_shortcut_conv2d_depthwise_bn 0=40
+Split            splitncnn_7                      1 2 vargface_head_head_pooling_shortcut_conv2d_depthwise_bn vargface_head_head_pooling_shortcut_conv2d_depthwise_bn_splitncnn_0 vargface_head_head_pooling_shortcut_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_head_head_pooling_shortcut_conv2d_depthwise_act 1 1 vargface_head_head_pooling_shortcut_conv2d_depthwise_bn_splitncnn_1 vargface_head_head_pooling_shortcut_conv2d_depthwise_act
+BinaryOp         underscorencnn_7_mul1            2 1 vargface_head_head_pooling_shortcut_conv2d_depthwise_bn_splitncnn_0 vargface_head_head_pooling_shortcut_conv2d_depthwise_act underscorencnn_7_mul1 0=2
+Convolution      vargface_head_head_pooling_shortcut_conv2d_pointwise 1 1 underscorencnn_7_mul1 vargface_head_head_pooling_shortcut_conv2d_pointwise 0=40 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=1600
+BatchNorm        vargface_head_head_pooling_shortcut_conv2d_pointwise_bn 1 1 vargface_head_head_pooling_shortcut_conv2d_pointwise vargface_head_head_pooling_shortcut_conv2d_pointwise_bn 0=40
+BinaryOp         underscorencnn_8_plus0           2 1 broadcast_mul0 vargface_head_head_pooling_shortcut_conv2d_pointwise_bn underscorencnn_8_plus0 0=0
+Split            splitncnn_8                      1 2 underscorencnn_8_plus0 underscorencnn_8_plus0_splitncnn_0 underscorencnn_8_plus0_splitncnn_1
+Sigmoid          vargface_head_head_pooling_out_data_act 1 1 underscorencnn_8_plus0_splitncnn_1 vargface_head_head_pooling_out_data_act
+BinaryOp         underscorencnn_9_mul6            2 1 underscorencnn_8_plus0_splitncnn_0 vargface_head_head_pooling_out_data_act underscorencnn_9_mul6 0=2
+Split            splitncnn_9                      1 2 underscorencnn_9_mul6 underscorencnn_9_mul6_splitncnn_0 underscorencnn_9_mul6_splitncnn_1
+ConvolutionDepthWise vargface_stage_2_unit_1_sep1_data_branch_conv2d_depthwise 1 1 underscorencnn_9_mul6_splitncnn_1 vargface_stage_2_unit_1_sep1_data_branch_conv2d_depthwise 0=80 1=3 11=3 2=1 12=1 3=2 13=2 4=1 14=1 5=0 6=720 7=40
+BatchNorm        vargface_stage_2_unit_1_sep1_data_branch_conv2d_depthwise_bn 1 1 vargface_stage_2_unit_1_sep1_data_branch_conv2d_depthwise vargface_stage_2_unit_1_sep1_data_branch_conv2d_depthwise_bn 0=80
+Split            splitncnn_10                     1 2 vargface_stage_2_unit_1_sep1_data_branch_conv2d_depthwise_bn vargface_stage_2_unit_1_sep1_data_branch_conv2d_depthwise_bn_splitncnn_0 vargface_stage_2_unit_1_sep1_data_branch_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_2_unit_1_sep1_data_branch_conv2d_depthwise_act 1 1 vargface_stage_2_unit_1_sep1_data_branch_conv2d_depthwise_bn_splitncnn_1 vargface_stage_2_unit_1_sep1_data_branch_conv2d_depthwise_act
+BinaryOp         underscorencnn_10_mul8           2 1 vargface_stage_2_unit_1_sep1_data_branch_conv2d_depthwise_bn_splitncnn_0 vargface_stage_2_unit_1_sep1_data_branch_conv2d_depthwise_act underscorencnn_10_mul8 0=2
+Convolution      vargface_stage_2_unit_1_sep1_data_branch_conv2d_pointwise 1 1 underscorencnn_10_mul8 vargface_stage_2_unit_1_sep1_data_branch_conv2d_pointwise 0=80 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=6400
+BatchNorm        vargface_stage_2_unit_1_sep1_data_branch_conv2d_pointwise_bn 1 1 vargface_stage_2_unit_1_sep1_data_branch_conv2d_pointwise vargface_stage_2_unit_1_sep1_data_branch_conv2d_pointwise_bn 0=80
+Split            splitncnn_11                     1 2 vargface_stage_2_unit_1_sep1_data_branch_conv2d_pointwise_bn vargface_stage_2_unit_1_sep1_data_branch_conv2d_pointwise_bn_splitncnn_0 vargface_stage_2_unit_1_sep1_data_branch_conv2d_pointwise_bn_splitncnn_1
+Sigmoid          vargface_stage_2_unit_1_sep1_data_act 1 1 vargface_stage_2_unit_1_sep1_data_branch_conv2d_pointwise_bn_splitncnn_1 vargface_stage_2_unit_1_sep1_data_act
+BinaryOp         underscorencnn_11_mul9           2 1 vargface_stage_2_unit_1_sep1_data_branch_conv2d_pointwise_bn_splitncnn_0 vargface_stage_2_unit_1_sep1_data_act underscorencnn_11_mul9 0=2
+ConvolutionDepthWise vargface_stage_2_unit_1_sep2_data_conv2d_depthwise 1 1 underscorencnn_11_mul9 vargface_stage_2_unit_1_sep2_data_conv2d_depthwise 0=160 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=1440 7=80
+BatchNorm        vargface_stage_2_unit_1_sep2_data_conv2d_depthwise_bn 1 1 vargface_stage_2_unit_1_sep2_data_conv2d_depthwise vargface_stage_2_unit_1_sep2_data_conv2d_depthwise_bn 0=160
+Split            splitncnn_12                     1 2 vargface_stage_2_unit_1_sep2_data_conv2d_depthwise_bn vargface_stage_2_unit_1_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_2_unit_1_sep2_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_2_unit_1_sep2_data_conv2d_depthwise_act 1 1 vargface_stage_2_unit_1_sep2_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_2_unit_1_sep2_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_12_mul10          2 1 vargface_stage_2_unit_1_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_2_unit_1_sep2_data_conv2d_depthwise_act underscorencnn_12_mul10 0=2
+Convolution      vargface_stage_2_unit_1_sep2_data_conv2d_pointwise 1 1 underscorencnn_12_mul10 vargface_stage_2_unit_1_sep2_data_conv2d_pointwise 0=80 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=12800
+BatchNorm        vargface_stage_2_unit_1_sep2_data_conv2d_pointwise_bn 1 1 vargface_stage_2_unit_1_sep2_data_conv2d_pointwise vargface_stage_2_unit_1_sep2_data_conv2d_pointwise_bn 0=80
+ConvolutionDepthWise vargface_stage_2_unit_1_shortcut_conv2d_depthwise 1 1 underscorencnn_9_mul6_splitncnn_0 vargface_stage_2_unit_1_shortcut_conv2d_depthwise 0=80 1=3 11=3 2=1 12=1 3=2 13=2 4=1 14=1 5=0 6=720 7=40
+BatchNorm        vargface_stage_2_unit_1_shortcut_conv2d_depthwise_bn 1 1 vargface_stage_2_unit_1_shortcut_conv2d_depthwise vargface_stage_2_unit_1_shortcut_conv2d_depthwise_bn 0=80
+Split            splitncnn_13                     1 2 vargface_stage_2_unit_1_shortcut_conv2d_depthwise_bn vargface_stage_2_unit_1_shortcut_conv2d_depthwise_bn_splitncnn_0 vargface_stage_2_unit_1_shortcut_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_2_unit_1_shortcut_conv2d_depthwise_act 1 1 vargface_stage_2_unit_1_shortcut_conv2d_depthwise_bn_splitncnn_1 vargface_stage_2_unit_1_shortcut_conv2d_depthwise_act
+BinaryOp         underscorencnn_13_mul7           2 1 vargface_stage_2_unit_1_shortcut_conv2d_depthwise_bn_splitncnn_0 vargface_stage_2_unit_1_shortcut_conv2d_depthwise_act underscorencnn_13_mul7 0=2
+Convolution      vargface_stage_2_unit_1_shortcut_conv2d_pointwise 1 1 underscorencnn_13_mul7 vargface_stage_2_unit_1_shortcut_conv2d_pointwise 0=80 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=6400
+BatchNorm        vargface_stage_2_unit_1_shortcut_conv2d_pointwise_bn 1 1 vargface_stage_2_unit_1_shortcut_conv2d_pointwise vargface_stage_2_unit_1_shortcut_conv2d_pointwise_bn 0=80
+BinaryOp         underscorencnn_14_plus1          2 1 vargface_stage_2_unit_1_sep2_data_conv2d_pointwise_bn vargface_stage_2_unit_1_shortcut_conv2d_pointwise_bn underscorencnn_14_plus1 0=0
+Split            splitncnn_14                     1 2 underscorencnn_14_plus1 underscorencnn_14_plus1_splitncnn_0 underscorencnn_14_plus1_splitncnn_1
+Sigmoid          vargface_stage_2_unit_1_out_data_act 1 1 underscorencnn_14_plus1_splitncnn_1 vargface_stage_2_unit_1_out_data_act
+BinaryOp         underscorencnn_15_mul11          2 1 underscorencnn_14_plus1_splitncnn_0 vargface_stage_2_unit_1_out_data_act underscorencnn_15_mul11 0=2
+Split            splitncnn_15                     1 2 underscorencnn_15_mul11 underscorencnn_15_mul11_splitncnn_0 underscorencnn_15_mul11_splitncnn_1
+ConvolutionDepthWise vargface_stage_2_unit_2_sep1_data_conv2d_depthwise 1 1 underscorencnn_15_mul11_splitncnn_1 vargface_stage_2_unit_2_sep1_data_conv2d_depthwise 0=160 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=1440 7=80
+BatchNorm        vargface_stage_2_unit_2_sep1_data_conv2d_depthwise_bn 1 1 vargface_stage_2_unit_2_sep1_data_conv2d_depthwise vargface_stage_2_unit_2_sep1_data_conv2d_depthwise_bn 0=160
+Split            splitncnn_16                     1 2 vargface_stage_2_unit_2_sep1_data_conv2d_depthwise_bn vargface_stage_2_unit_2_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_2_unit_2_sep1_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_2_unit_2_sep1_data_conv2d_depthwise_act 1 1 vargface_stage_2_unit_2_sep1_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_2_unit_2_sep1_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_16_mul12          2 1 vargface_stage_2_unit_2_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_2_unit_2_sep1_data_conv2d_depthwise_act underscorencnn_16_mul12 0=2
+Convolution      vargface_stage_2_unit_2_sep1_data_conv2d_pointwise 1 1 underscorencnn_16_mul12 vargface_stage_2_unit_2_sep1_data_conv2d_pointwise 0=80 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=12800
+BatchNorm        vargface_stage_2_unit_2_sep1_data_conv2d_pointwise_bn 1 1 vargface_stage_2_unit_2_sep1_data_conv2d_pointwise vargface_stage_2_unit_2_sep1_data_conv2d_pointwise_bn 0=80
+Split            splitncnn_17                     1 2 vargface_stage_2_unit_2_sep1_data_conv2d_pointwise_bn vargface_stage_2_unit_2_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_2_unit_2_sep1_data_conv2d_pointwise_bn_splitncnn_1
+Sigmoid          vargface_stage_2_unit_2_sep1_data_conv2d_pointwise_act 1 1 vargface_stage_2_unit_2_sep1_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_2_unit_2_sep1_data_conv2d_pointwise_act
+BinaryOp         underscorencnn_17_mul13          2 1 vargface_stage_2_unit_2_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_2_unit_2_sep1_data_conv2d_pointwise_act underscorencnn_17_mul13 0=2
+ConvolutionDepthWise vargface_stage_2_unit_2_sep2_data_conv2d_depthwise 1 1 underscorencnn_17_mul13 vargface_stage_2_unit_2_sep2_data_conv2d_depthwise 0=160 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=1440 7=80
+BatchNorm        vargface_stage_2_unit_2_sep2_data_conv2d_depthwise_bn 1 1 vargface_stage_2_unit_2_sep2_data_conv2d_depthwise vargface_stage_2_unit_2_sep2_data_conv2d_depthwise_bn 0=160
+Split            splitncnn_18                     1 2 vargface_stage_2_unit_2_sep2_data_conv2d_depthwise_bn vargface_stage_2_unit_2_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_2_unit_2_sep2_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_2_unit_2_sep2_data_conv2d_depthwise_act 1 1 vargface_stage_2_unit_2_sep2_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_2_unit_2_sep2_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_18_mul14          2 1 vargface_stage_2_unit_2_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_2_unit_2_sep2_data_conv2d_depthwise_act underscorencnn_18_mul14 0=2
+Convolution      vargface_stage_2_unit_2_sep2_data_conv2d_pointwise 1 1 underscorencnn_18_mul14 vargface_stage_2_unit_2_sep2_data_conv2d_pointwise 0=80 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=12800
+BatchNorm        vargface_stage_2_unit_2_sep2_data_conv2d_pointwise_bn 1 1 vargface_stage_2_unit_2_sep2_data_conv2d_pointwise vargface_stage_2_unit_2_sep2_data_conv2d_pointwise_bn 0=80
+Split            splitncnn_19                     1 2 vargface_stage_2_unit_2_sep2_data_conv2d_pointwise_bn vargface_stage_2_unit_2_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_2_unit_2_sep2_data_conv2d_pointwise_bn_splitncnn_1
+Pooling          vargface_stage_2_unit_2_se_pool1 1 1 vargface_stage_2_unit_2_sep2_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_2_unit_2_se_pool1 0=1 4=1 5=1 6=0
+Convolution      vargface_stage_2_unit_2_se_conv1 1 1 vargface_stage_2_unit_2_se_pool1 vargface_stage_2_unit_2_se_conv1 0=20 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=1600
+Split            splitncnn_20                     1 2 vargface_stage_2_unit_2_se_conv1 vargface_stage_2_unit_2_se_conv1_splitncnn_0 vargface_stage_2_unit_2_se_conv1_splitncnn_1
+Sigmoid          vargface_stage_2_unit_2_se_act1  1 1 vargface_stage_2_unit_2_se_conv1_splitncnn_1 vargface_stage_2_unit_2_se_act1
+BinaryOp         underscorencnn_19_mul15          2 1 vargface_stage_2_unit_2_se_conv1_splitncnn_0 vargface_stage_2_unit_2_se_act1 underscorencnn_19_mul15 0=2
+Convolution      vargface_stage_2_unit_2_se_conv2 1 1 underscorencnn_19_mul15 vargface_stage_2_unit_2_se_conv2 0=80 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=1600
+Sigmoid          vargface_stage_2_unit_2_se_sigmoid 1 1 vargface_stage_2_unit_2_se_conv2 vargface_stage_2_unit_2_se_sigmoid
+BinaryOp         broadcast_mul1                   2 1 vargface_stage_2_unit_2_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_2_unit_2_se_sigmoid broadcast_mul1 0=2
+BinaryOp         underscorencnn_20_plus2          2 1 broadcast_mul1 underscorencnn_15_mul11_splitncnn_0 underscorencnn_20_plus2 0=0
+Split            splitncnn_21                     1 2 underscorencnn_20_plus2 underscorencnn_20_plus2_splitncnn_0 underscorencnn_20_plus2_splitncnn_1
+Sigmoid          vargface_stage_2_unit_2_out_data_act 1 1 underscorencnn_20_plus2_splitncnn_1 vargface_stage_2_unit_2_out_data_act
+BinaryOp         underscorencnn_21_mul16          2 1 underscorencnn_20_plus2_splitncnn_0 vargface_stage_2_unit_2_out_data_act underscorencnn_21_mul16 0=2
+Split            splitncnn_22                     1 2 underscorencnn_21_mul16 underscorencnn_21_mul16_splitncnn_0 underscorencnn_21_mul16_splitncnn_1
+ConvolutionDepthWise vargface_stage_2_unit_3_sep1_data_conv2d_depthwise 1 1 underscorencnn_21_mul16_splitncnn_1 vargface_stage_2_unit_3_sep1_data_conv2d_depthwise 0=160 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=1440 7=80
+BatchNorm        vargface_stage_2_unit_3_sep1_data_conv2d_depthwise_bn 1 1 vargface_stage_2_unit_3_sep1_data_conv2d_depthwise vargface_stage_2_unit_3_sep1_data_conv2d_depthwise_bn 0=160
+Split            splitncnn_23                     1 2 vargface_stage_2_unit_3_sep1_data_conv2d_depthwise_bn vargface_stage_2_unit_3_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_2_unit_3_sep1_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_2_unit_3_sep1_data_conv2d_depthwise_act 1 1 vargface_stage_2_unit_3_sep1_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_2_unit_3_sep1_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_22_mul17          2 1 vargface_stage_2_unit_3_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_2_unit_3_sep1_data_conv2d_depthwise_act underscorencnn_22_mul17 0=2
+Convolution      vargface_stage_2_unit_3_sep1_data_conv2d_pointwise 1 1 underscorencnn_22_mul17 vargface_stage_2_unit_3_sep1_data_conv2d_pointwise 0=80 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=12800
+BatchNorm        vargface_stage_2_unit_3_sep1_data_conv2d_pointwise_bn 1 1 vargface_stage_2_unit_3_sep1_data_conv2d_pointwise vargface_stage_2_unit_3_sep1_data_conv2d_pointwise_bn 0=80
+Split            splitncnn_24                     1 2 vargface_stage_2_unit_3_sep1_data_conv2d_pointwise_bn vargface_stage_2_unit_3_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_2_unit_3_sep1_data_conv2d_pointwise_bn_splitncnn_1
+Sigmoid          vargface_stage_2_unit_3_sep1_data_conv2d_pointwise_act 1 1 vargface_stage_2_unit_3_sep1_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_2_unit_3_sep1_data_conv2d_pointwise_act
+BinaryOp         underscorencnn_23_mul18          2 1 vargface_stage_2_unit_3_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_2_unit_3_sep1_data_conv2d_pointwise_act underscorencnn_23_mul18 0=2
+ConvolutionDepthWise vargface_stage_2_unit_3_sep2_data_conv2d_depthwise 1 1 underscorencnn_23_mul18 vargface_stage_2_unit_3_sep2_data_conv2d_depthwise 0=160 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=1440 7=80
+BatchNorm        vargface_stage_2_unit_3_sep2_data_conv2d_depthwise_bn 1 1 vargface_stage_2_unit_3_sep2_data_conv2d_depthwise vargface_stage_2_unit_3_sep2_data_conv2d_depthwise_bn 0=160
+Split            splitncnn_25                     1 2 vargface_stage_2_unit_3_sep2_data_conv2d_depthwise_bn vargface_stage_2_unit_3_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_2_unit_3_sep2_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_2_unit_3_sep2_data_conv2d_depthwise_act 1 1 vargface_stage_2_unit_3_sep2_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_2_unit_3_sep2_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_24_mul19          2 1 vargface_stage_2_unit_3_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_2_unit_3_sep2_data_conv2d_depthwise_act underscorencnn_24_mul19 0=2
+Convolution      vargface_stage_2_unit_3_sep2_data_conv2d_pointwise 1 1 underscorencnn_24_mul19 vargface_stage_2_unit_3_sep2_data_conv2d_pointwise 0=80 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=12800
+BatchNorm        vargface_stage_2_unit_3_sep2_data_conv2d_pointwise_bn 1 1 vargface_stage_2_unit_3_sep2_data_conv2d_pointwise vargface_stage_2_unit_3_sep2_data_conv2d_pointwise_bn 0=80
+Split            splitncnn_26                     1 2 vargface_stage_2_unit_3_sep2_data_conv2d_pointwise_bn vargface_stage_2_unit_3_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_2_unit_3_sep2_data_conv2d_pointwise_bn_splitncnn_1
+Pooling          vargface_stage_2_unit_3_se_pool1 1 1 vargface_stage_2_unit_3_sep2_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_2_unit_3_se_pool1 0=1 4=1 5=1 6=0
+Convolution      vargface_stage_2_unit_3_se_conv1 1 1 vargface_stage_2_unit_3_se_pool1 vargface_stage_2_unit_3_se_conv1 0=20 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=1600
+Split            splitncnn_27                     1 2 vargface_stage_2_unit_3_se_conv1 vargface_stage_2_unit_3_se_conv1_splitncnn_0 vargface_stage_2_unit_3_se_conv1_splitncnn_1
+Sigmoid          vargface_stage_2_unit_3_se_act1  1 1 vargface_stage_2_unit_3_se_conv1_splitncnn_1 vargface_stage_2_unit_3_se_act1
+BinaryOp         underscorencnn_25_mul20          2 1 vargface_stage_2_unit_3_se_conv1_splitncnn_0 vargface_stage_2_unit_3_se_act1 underscorencnn_25_mul20 0=2
+Convolution      vargface_stage_2_unit_3_se_conv2 1 1 underscorencnn_25_mul20 vargface_stage_2_unit_3_se_conv2 0=80 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=1600
+Sigmoid          vargface_stage_2_unit_3_se_sigmoid 1 1 vargface_stage_2_unit_3_se_conv2 vargface_stage_2_unit_3_se_sigmoid
+BinaryOp         broadcast_mul2                   2 1 vargface_stage_2_unit_3_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_2_unit_3_se_sigmoid broadcast_mul2 0=2
+BinaryOp         underscorencnn_26_plus3          2 1 broadcast_mul2 underscorencnn_21_mul16_splitncnn_0 underscorencnn_26_plus3 0=0
+Split            splitncnn_28                     1 2 underscorencnn_26_plus3 underscorencnn_26_plus3_splitncnn_0 underscorencnn_26_plus3_splitncnn_1
+Sigmoid          vargface_stage_2_unit_3_out_data_act 1 1 underscorencnn_26_plus3_splitncnn_1 vargface_stage_2_unit_3_out_data_act
+BinaryOp         underscorencnn_27_mul21          2 1 underscorencnn_26_plus3_splitncnn_0 vargface_stage_2_unit_3_out_data_act underscorencnn_27_mul21 0=2
+Split            splitncnn_29                     1 2 underscorencnn_27_mul21 underscorencnn_27_mul21_splitncnn_0 underscorencnn_27_mul21_splitncnn_1
+ConvolutionDepthWise vargface_stage_3_unit_1_sep1_data_branch_conv2d_depthwise 1 1 underscorencnn_27_mul21_splitncnn_1 vargface_stage_3_unit_1_sep1_data_branch_conv2d_depthwise 0=160 1=3 11=3 2=1 12=1 3=2 13=2 4=1 14=1 5=0 6=1440 7=80
+BatchNorm        vargface_stage_3_unit_1_sep1_data_branch_conv2d_depthwise_bn 1 1 vargface_stage_3_unit_1_sep1_data_branch_conv2d_depthwise vargface_stage_3_unit_1_sep1_data_branch_conv2d_depthwise_bn 0=160
+Split            splitncnn_30                     1 2 vargface_stage_3_unit_1_sep1_data_branch_conv2d_depthwise_bn vargface_stage_3_unit_1_sep1_data_branch_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_1_sep1_data_branch_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_1_sep1_data_branch_conv2d_depthwise_act 1 1 vargface_stage_3_unit_1_sep1_data_branch_conv2d_depthwise_bn_splitncnn_1 vargface_stage_3_unit_1_sep1_data_branch_conv2d_depthwise_act
+BinaryOp         underscorencnn_28_mul23          2 1 vargface_stage_3_unit_1_sep1_data_branch_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_1_sep1_data_branch_conv2d_depthwise_act underscorencnn_28_mul23 0=2
+Convolution      vargface_stage_3_unit_1_sep1_data_branch_conv2d_pointwise 1 1 underscorencnn_28_mul23 vargface_stage_3_unit_1_sep1_data_branch_conv2d_pointwise 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=25600
+BatchNorm        vargface_stage_3_unit_1_sep1_data_branch_conv2d_pointwise_bn 1 1 vargface_stage_3_unit_1_sep1_data_branch_conv2d_pointwise vargface_stage_3_unit_1_sep1_data_branch_conv2d_pointwise_bn 0=160
+Split            splitncnn_31                     1 2 vargface_stage_3_unit_1_sep1_data_branch_conv2d_pointwise_bn vargface_stage_3_unit_1_sep1_data_branch_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_1_sep1_data_branch_conv2d_pointwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_1_sep1_data_act 1 1 vargface_stage_3_unit_1_sep1_data_branch_conv2d_pointwise_bn_splitncnn_1 vargface_stage_3_unit_1_sep1_data_act
+BinaryOp         underscorencnn_29_mul24          2 1 vargface_stage_3_unit_1_sep1_data_branch_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_1_sep1_data_act underscorencnn_29_mul24 0=2
+ConvolutionDepthWise vargface_stage_3_unit_1_sep2_data_conv2d_depthwise 1 1 underscorencnn_29_mul24 vargface_stage_3_unit_1_sep2_data_conv2d_depthwise 0=320 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=2880 7=160
+BatchNorm        vargface_stage_3_unit_1_sep2_data_conv2d_depthwise_bn 1 1 vargface_stage_3_unit_1_sep2_data_conv2d_depthwise vargface_stage_3_unit_1_sep2_data_conv2d_depthwise_bn 0=320
+Split            splitncnn_32                     1 2 vargface_stage_3_unit_1_sep2_data_conv2d_depthwise_bn vargface_stage_3_unit_1_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_1_sep2_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_1_sep2_data_conv2d_depthwise_act 1 1 vargface_stage_3_unit_1_sep2_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_3_unit_1_sep2_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_30_mul25          2 1 vargface_stage_3_unit_1_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_1_sep2_data_conv2d_depthwise_act underscorencnn_30_mul25 0=2
+Convolution      vargface_stage_3_unit_1_sep2_data_conv2d_pointwise 1 1 underscorencnn_30_mul25 vargface_stage_3_unit_1_sep2_data_conv2d_pointwise 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=51200
+BatchNorm        vargface_stage_3_unit_1_sep2_data_conv2d_pointwise_bn 1 1 vargface_stage_3_unit_1_sep2_data_conv2d_pointwise vargface_stage_3_unit_1_sep2_data_conv2d_pointwise_bn 0=160
+ConvolutionDepthWise vargface_stage_3_unit_1_shortcut_conv2d_depthwise 1 1 underscorencnn_27_mul21_splitncnn_0 vargface_stage_3_unit_1_shortcut_conv2d_depthwise 0=160 1=3 11=3 2=1 12=1 3=2 13=2 4=1 14=1 5=0 6=1440 7=80
+BatchNorm        vargface_stage_3_unit_1_shortcut_conv2d_depthwise_bn 1 1 vargface_stage_3_unit_1_shortcut_conv2d_depthwise vargface_stage_3_unit_1_shortcut_conv2d_depthwise_bn 0=160
+Split            splitncnn_33                     1 2 vargface_stage_3_unit_1_shortcut_conv2d_depthwise_bn vargface_stage_3_unit_1_shortcut_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_1_shortcut_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_1_shortcut_conv2d_depthwise_act 1 1 vargface_stage_3_unit_1_shortcut_conv2d_depthwise_bn_splitncnn_1 vargface_stage_3_unit_1_shortcut_conv2d_depthwise_act
+BinaryOp         underscorencnn_31_mul22          2 1 vargface_stage_3_unit_1_shortcut_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_1_shortcut_conv2d_depthwise_act underscorencnn_31_mul22 0=2
+Convolution      vargface_stage_3_unit_1_shortcut_conv2d_pointwise 1 1 underscorencnn_31_mul22 vargface_stage_3_unit_1_shortcut_conv2d_pointwise 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=25600
+BatchNorm        vargface_stage_3_unit_1_shortcut_conv2d_pointwise_bn 1 1 vargface_stage_3_unit_1_shortcut_conv2d_pointwise vargface_stage_3_unit_1_shortcut_conv2d_pointwise_bn 0=160
+BinaryOp         underscorencnn_32_plus4          2 1 vargface_stage_3_unit_1_sep2_data_conv2d_pointwise_bn vargface_stage_3_unit_1_shortcut_conv2d_pointwise_bn underscorencnn_32_plus4 0=0
+Split            splitncnn_34                     1 2 underscorencnn_32_plus4 underscorencnn_32_plus4_splitncnn_0 underscorencnn_32_plus4_splitncnn_1
+Sigmoid          vargface_stage_3_unit_1_out_data_act 1 1 underscorencnn_32_plus4_splitncnn_1 vargface_stage_3_unit_1_out_data_act
+BinaryOp         underscorencnn_33_mul26          2 1 underscorencnn_32_plus4_splitncnn_0 vargface_stage_3_unit_1_out_data_act underscorencnn_33_mul26 0=2
+Split            splitncnn_35                     1 2 underscorencnn_33_mul26 underscorencnn_33_mul26_splitncnn_0 underscorencnn_33_mul26_splitncnn_1
+ConvolutionDepthWise vargface_stage_3_unit_2_sep1_data_conv2d_depthwise 1 1 underscorencnn_33_mul26_splitncnn_1 vargface_stage_3_unit_2_sep1_data_conv2d_depthwise 0=320 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=2880 7=160
+BatchNorm        vargface_stage_3_unit_2_sep1_data_conv2d_depthwise_bn 1 1 vargface_stage_3_unit_2_sep1_data_conv2d_depthwise vargface_stage_3_unit_2_sep1_data_conv2d_depthwise_bn 0=320
+Split            splitncnn_36                     1 2 vargface_stage_3_unit_2_sep1_data_conv2d_depthwise_bn vargface_stage_3_unit_2_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_2_sep1_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_2_sep1_data_conv2d_depthwise_act 1 1 vargface_stage_3_unit_2_sep1_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_3_unit_2_sep1_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_34_mul27          2 1 vargface_stage_3_unit_2_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_2_sep1_data_conv2d_depthwise_act underscorencnn_34_mul27 0=2
+Convolution      vargface_stage_3_unit_2_sep1_data_conv2d_pointwise 1 1 underscorencnn_34_mul27 vargface_stage_3_unit_2_sep1_data_conv2d_pointwise 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=51200
+BatchNorm        vargface_stage_3_unit_2_sep1_data_conv2d_pointwise_bn 1 1 vargface_stage_3_unit_2_sep1_data_conv2d_pointwise vargface_stage_3_unit_2_sep1_data_conv2d_pointwise_bn 0=160
+Split            splitncnn_37                     1 2 vargface_stage_3_unit_2_sep1_data_conv2d_pointwise_bn vargface_stage_3_unit_2_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_2_sep1_data_conv2d_pointwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_2_sep1_data_conv2d_pointwise_act 1 1 vargface_stage_3_unit_2_sep1_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_3_unit_2_sep1_data_conv2d_pointwise_act
+BinaryOp         underscorencnn_35_mul28          2 1 vargface_stage_3_unit_2_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_2_sep1_data_conv2d_pointwise_act underscorencnn_35_mul28 0=2
+ConvolutionDepthWise vargface_stage_3_unit_2_sep2_data_conv2d_depthwise 1 1 underscorencnn_35_mul28 vargface_stage_3_unit_2_sep2_data_conv2d_depthwise 0=320 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=2880 7=160
+BatchNorm        vargface_stage_3_unit_2_sep2_data_conv2d_depthwise_bn 1 1 vargface_stage_3_unit_2_sep2_data_conv2d_depthwise vargface_stage_3_unit_2_sep2_data_conv2d_depthwise_bn 0=320
+Split            splitncnn_38                     1 2 vargface_stage_3_unit_2_sep2_data_conv2d_depthwise_bn vargface_stage_3_unit_2_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_2_sep2_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_2_sep2_data_conv2d_depthwise_act 1 1 vargface_stage_3_unit_2_sep2_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_3_unit_2_sep2_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_36_mul29          2 1 vargface_stage_3_unit_2_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_2_sep2_data_conv2d_depthwise_act underscorencnn_36_mul29 0=2
+Convolution      vargface_stage_3_unit_2_sep2_data_conv2d_pointwise 1 1 underscorencnn_36_mul29 vargface_stage_3_unit_2_sep2_data_conv2d_pointwise 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=51200
+BatchNorm        vargface_stage_3_unit_2_sep2_data_conv2d_pointwise_bn 1 1 vargface_stage_3_unit_2_sep2_data_conv2d_pointwise vargface_stage_3_unit_2_sep2_data_conv2d_pointwise_bn 0=160
+Split            splitncnn_39                     1 2 vargface_stage_3_unit_2_sep2_data_conv2d_pointwise_bn vargface_stage_3_unit_2_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_2_sep2_data_conv2d_pointwise_bn_splitncnn_1
+Pooling          vargface_stage_3_unit_2_se_pool1 1 1 vargface_stage_3_unit_2_sep2_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_3_unit_2_se_pool1 0=1 4=1 5=1 6=0
+Convolution      vargface_stage_3_unit_2_se_conv1 1 1 vargface_stage_3_unit_2_se_pool1 vargface_stage_3_unit_2_se_conv1 0=40 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=6400
+Split            splitncnn_40                     1 2 vargface_stage_3_unit_2_se_conv1 vargface_stage_3_unit_2_se_conv1_splitncnn_0 vargface_stage_3_unit_2_se_conv1_splitncnn_1
+Sigmoid          vargface_stage_3_unit_2_se_act1  1 1 vargface_stage_3_unit_2_se_conv1_splitncnn_1 vargface_stage_3_unit_2_se_act1
+BinaryOp         underscorencnn_37_mul30          2 1 vargface_stage_3_unit_2_se_conv1_splitncnn_0 vargface_stage_3_unit_2_se_act1 underscorencnn_37_mul30 0=2
+Convolution      vargface_stage_3_unit_2_se_conv2 1 1 underscorencnn_37_mul30 vargface_stage_3_unit_2_se_conv2 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=6400
+Sigmoid          vargface_stage_3_unit_2_se_sigmoid 1 1 vargface_stage_3_unit_2_se_conv2 vargface_stage_3_unit_2_se_sigmoid
+BinaryOp         broadcast_mul3                   2 1 vargface_stage_3_unit_2_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_2_se_sigmoid broadcast_mul3 0=2
+BinaryOp         underscorencnn_38_plus5          2 1 broadcast_mul3 underscorencnn_33_mul26_splitncnn_0 underscorencnn_38_plus5 0=0
+Split            splitncnn_41                     1 2 underscorencnn_38_plus5 underscorencnn_38_plus5_splitncnn_0 underscorencnn_38_plus5_splitncnn_1
+Sigmoid          vargface_stage_3_unit_2_out_data_act 1 1 underscorencnn_38_plus5_splitncnn_1 vargface_stage_3_unit_2_out_data_act
+BinaryOp         underscorencnn_39_mul31          2 1 underscorencnn_38_plus5_splitncnn_0 vargface_stage_3_unit_2_out_data_act underscorencnn_39_mul31 0=2
+Split            splitncnn_42                     1 2 underscorencnn_39_mul31 underscorencnn_39_mul31_splitncnn_0 underscorencnn_39_mul31_splitncnn_1
+ConvolutionDepthWise vargface_stage_3_unit_3_sep1_data_conv2d_depthwise 1 1 underscorencnn_39_mul31_splitncnn_1 vargface_stage_3_unit_3_sep1_data_conv2d_depthwise 0=320 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=2880 7=160
+BatchNorm        vargface_stage_3_unit_3_sep1_data_conv2d_depthwise_bn 1 1 vargface_stage_3_unit_3_sep1_data_conv2d_depthwise vargface_stage_3_unit_3_sep1_data_conv2d_depthwise_bn 0=320
+Split            splitncnn_43                     1 2 vargface_stage_3_unit_3_sep1_data_conv2d_depthwise_bn vargface_stage_3_unit_3_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_3_sep1_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_3_sep1_data_conv2d_depthwise_act 1 1 vargface_stage_3_unit_3_sep1_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_3_unit_3_sep1_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_40_mul32          2 1 vargface_stage_3_unit_3_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_3_sep1_data_conv2d_depthwise_act underscorencnn_40_mul32 0=2
+Convolution      vargface_stage_3_unit_3_sep1_data_conv2d_pointwise 1 1 underscorencnn_40_mul32 vargface_stage_3_unit_3_sep1_data_conv2d_pointwise 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=51200
+BatchNorm        vargface_stage_3_unit_3_sep1_data_conv2d_pointwise_bn 1 1 vargface_stage_3_unit_3_sep1_data_conv2d_pointwise vargface_stage_3_unit_3_sep1_data_conv2d_pointwise_bn 0=160
+Split            splitncnn_44                     1 2 vargface_stage_3_unit_3_sep1_data_conv2d_pointwise_bn vargface_stage_3_unit_3_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_3_sep1_data_conv2d_pointwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_3_sep1_data_conv2d_pointwise_act 1 1 vargface_stage_3_unit_3_sep1_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_3_unit_3_sep1_data_conv2d_pointwise_act
+BinaryOp         underscorencnn_41_mul33          2 1 vargface_stage_3_unit_3_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_3_sep1_data_conv2d_pointwise_act underscorencnn_41_mul33 0=2
+ConvolutionDepthWise vargface_stage_3_unit_3_sep2_data_conv2d_depthwise 1 1 underscorencnn_41_mul33 vargface_stage_3_unit_3_sep2_data_conv2d_depthwise 0=320 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=2880 7=160
+BatchNorm        vargface_stage_3_unit_3_sep2_data_conv2d_depthwise_bn 1 1 vargface_stage_3_unit_3_sep2_data_conv2d_depthwise vargface_stage_3_unit_3_sep2_data_conv2d_depthwise_bn 0=320
+Split            splitncnn_45                     1 2 vargface_stage_3_unit_3_sep2_data_conv2d_depthwise_bn vargface_stage_3_unit_3_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_3_sep2_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_3_sep2_data_conv2d_depthwise_act 1 1 vargface_stage_3_unit_3_sep2_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_3_unit_3_sep2_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_42_mul34          2 1 vargface_stage_3_unit_3_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_3_sep2_data_conv2d_depthwise_act underscorencnn_42_mul34 0=2
+Convolution      vargface_stage_3_unit_3_sep2_data_conv2d_pointwise 1 1 underscorencnn_42_mul34 vargface_stage_3_unit_3_sep2_data_conv2d_pointwise 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=51200
+BatchNorm        vargface_stage_3_unit_3_sep2_data_conv2d_pointwise_bn 1 1 vargface_stage_3_unit_3_sep2_data_conv2d_pointwise vargface_stage_3_unit_3_sep2_data_conv2d_pointwise_bn 0=160
+Split            splitncnn_46                     1 2 vargface_stage_3_unit_3_sep2_data_conv2d_pointwise_bn vargface_stage_3_unit_3_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_3_sep2_data_conv2d_pointwise_bn_splitncnn_1
+Pooling          vargface_stage_3_unit_3_se_pool1 1 1 vargface_stage_3_unit_3_sep2_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_3_unit_3_se_pool1 0=1 4=1 5=1 6=0
+Convolution      vargface_stage_3_unit_3_se_conv1 1 1 vargface_stage_3_unit_3_se_pool1 vargface_stage_3_unit_3_se_conv1 0=40 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=6400
+Split            splitncnn_47                     1 2 vargface_stage_3_unit_3_se_conv1 vargface_stage_3_unit_3_se_conv1_splitncnn_0 vargface_stage_3_unit_3_se_conv1_splitncnn_1
+Sigmoid          vargface_stage_3_unit_3_se_act1  1 1 vargface_stage_3_unit_3_se_conv1_splitncnn_1 vargface_stage_3_unit_3_se_act1
+BinaryOp         underscorencnn_43_mul35          2 1 vargface_stage_3_unit_3_se_conv1_splitncnn_0 vargface_stage_3_unit_3_se_act1 underscorencnn_43_mul35 0=2
+Convolution      vargface_stage_3_unit_3_se_conv2 1 1 underscorencnn_43_mul35 vargface_stage_3_unit_3_se_conv2 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=6400
+Sigmoid          vargface_stage_3_unit_3_se_sigmoid 1 1 vargface_stage_3_unit_3_se_conv2 vargface_stage_3_unit_3_se_sigmoid
+BinaryOp         broadcast_mul4                   2 1 vargface_stage_3_unit_3_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_3_se_sigmoid broadcast_mul4 0=2
+BinaryOp         underscorencnn_44_plus6          2 1 broadcast_mul4 underscorencnn_39_mul31_splitncnn_0 underscorencnn_44_plus6 0=0
+Split            splitncnn_48                     1 2 underscorencnn_44_plus6 underscorencnn_44_plus6_splitncnn_0 underscorencnn_44_plus6_splitncnn_1
+Sigmoid          vargface_stage_3_unit_3_out_data_act 1 1 underscorencnn_44_plus6_splitncnn_1 vargface_stage_3_unit_3_out_data_act
+BinaryOp         underscorencnn_45_mul36          2 1 underscorencnn_44_plus6_splitncnn_0 vargface_stage_3_unit_3_out_data_act underscorencnn_45_mul36 0=2
+Split            splitncnn_49                     1 2 underscorencnn_45_mul36 underscorencnn_45_mul36_splitncnn_0 underscorencnn_45_mul36_splitncnn_1
+ConvolutionDepthWise vargface_stage_3_unit_4_sep1_data_conv2d_depthwise 1 1 underscorencnn_45_mul36_splitncnn_1 vargface_stage_3_unit_4_sep1_data_conv2d_depthwise 0=320 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=2880 7=160
+BatchNorm        vargface_stage_3_unit_4_sep1_data_conv2d_depthwise_bn 1 1 vargface_stage_3_unit_4_sep1_data_conv2d_depthwise vargface_stage_3_unit_4_sep1_data_conv2d_depthwise_bn 0=320
+Split            splitncnn_50                     1 2 vargface_stage_3_unit_4_sep1_data_conv2d_depthwise_bn vargface_stage_3_unit_4_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_4_sep1_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_4_sep1_data_conv2d_depthwise_act 1 1 vargface_stage_3_unit_4_sep1_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_3_unit_4_sep1_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_46_mul37          2 1 vargface_stage_3_unit_4_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_4_sep1_data_conv2d_depthwise_act underscorencnn_46_mul37 0=2
+Convolution      vargface_stage_3_unit_4_sep1_data_conv2d_pointwise 1 1 underscorencnn_46_mul37 vargface_stage_3_unit_4_sep1_data_conv2d_pointwise 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=51200
+BatchNorm        vargface_stage_3_unit_4_sep1_data_conv2d_pointwise_bn 1 1 vargface_stage_3_unit_4_sep1_data_conv2d_pointwise vargface_stage_3_unit_4_sep1_data_conv2d_pointwise_bn 0=160
+Split            splitncnn_51                     1 2 vargface_stage_3_unit_4_sep1_data_conv2d_pointwise_bn vargface_stage_3_unit_4_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_4_sep1_data_conv2d_pointwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_4_sep1_data_conv2d_pointwise_act 1 1 vargface_stage_3_unit_4_sep1_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_3_unit_4_sep1_data_conv2d_pointwise_act
+BinaryOp         underscorencnn_47_mul38          2 1 vargface_stage_3_unit_4_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_4_sep1_data_conv2d_pointwise_act underscorencnn_47_mul38 0=2
+ConvolutionDepthWise vargface_stage_3_unit_4_sep2_data_conv2d_depthwise 1 1 underscorencnn_47_mul38 vargface_stage_3_unit_4_sep2_data_conv2d_depthwise 0=320 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=2880 7=160
+BatchNorm        vargface_stage_3_unit_4_sep2_data_conv2d_depthwise_bn 1 1 vargface_stage_3_unit_4_sep2_data_conv2d_depthwise vargface_stage_3_unit_4_sep2_data_conv2d_depthwise_bn 0=320
+Split            splitncnn_52                     1 2 vargface_stage_3_unit_4_sep2_data_conv2d_depthwise_bn vargface_stage_3_unit_4_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_4_sep2_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_4_sep2_data_conv2d_depthwise_act 1 1 vargface_stage_3_unit_4_sep2_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_3_unit_4_sep2_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_48_mul39          2 1 vargface_stage_3_unit_4_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_4_sep2_data_conv2d_depthwise_act underscorencnn_48_mul39 0=2
+Convolution      vargface_stage_3_unit_4_sep2_data_conv2d_pointwise 1 1 underscorencnn_48_mul39 vargface_stage_3_unit_4_sep2_data_conv2d_pointwise 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=51200
+BatchNorm        vargface_stage_3_unit_4_sep2_data_conv2d_pointwise_bn 1 1 vargface_stage_3_unit_4_sep2_data_conv2d_pointwise vargface_stage_3_unit_4_sep2_data_conv2d_pointwise_bn 0=160
+Split            splitncnn_53                     1 2 vargface_stage_3_unit_4_sep2_data_conv2d_pointwise_bn vargface_stage_3_unit_4_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_4_sep2_data_conv2d_pointwise_bn_splitncnn_1
+Pooling          vargface_stage_3_unit_4_se_pool1 1 1 vargface_stage_3_unit_4_sep2_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_3_unit_4_se_pool1 0=1 4=1 5=1 6=0
+Convolution      vargface_stage_3_unit_4_se_conv1 1 1 vargface_stage_3_unit_4_se_pool1 vargface_stage_3_unit_4_se_conv1 0=40 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=6400
+Split            splitncnn_54                     1 2 vargface_stage_3_unit_4_se_conv1 vargface_stage_3_unit_4_se_conv1_splitncnn_0 vargface_stage_3_unit_4_se_conv1_splitncnn_1
+Sigmoid          vargface_stage_3_unit_4_se_act1  1 1 vargface_stage_3_unit_4_se_conv1_splitncnn_1 vargface_stage_3_unit_4_se_act1
+BinaryOp         underscorencnn_49_mul40          2 1 vargface_stage_3_unit_4_se_conv1_splitncnn_0 vargface_stage_3_unit_4_se_act1 underscorencnn_49_mul40 0=2
+Convolution      vargface_stage_3_unit_4_se_conv2 1 1 underscorencnn_49_mul40 vargface_stage_3_unit_4_se_conv2 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=6400
+Sigmoid          vargface_stage_3_unit_4_se_sigmoid 1 1 vargface_stage_3_unit_4_se_conv2 vargface_stage_3_unit_4_se_sigmoid
+BinaryOp         broadcast_mul5                   2 1 vargface_stage_3_unit_4_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_4_se_sigmoid broadcast_mul5 0=2
+BinaryOp         underscorencnn_50_plus7          2 1 broadcast_mul5 underscorencnn_45_mul36_splitncnn_0 underscorencnn_50_plus7 0=0
+Split            splitncnn_55                     1 2 underscorencnn_50_plus7 underscorencnn_50_plus7_splitncnn_0 underscorencnn_50_plus7_splitncnn_1
+Sigmoid          vargface_stage_3_unit_4_out_data_act 1 1 underscorencnn_50_plus7_splitncnn_1 vargface_stage_3_unit_4_out_data_act
+BinaryOp         underscorencnn_51_mul41          2 1 underscorencnn_50_plus7_splitncnn_0 vargface_stage_3_unit_4_out_data_act underscorencnn_51_mul41 0=2
+Split            splitncnn_56                     1 2 underscorencnn_51_mul41 underscorencnn_51_mul41_splitncnn_0 underscorencnn_51_mul41_splitncnn_1
+ConvolutionDepthWise vargface_stage_3_unit_5_sep1_data_conv2d_depthwise 1 1 underscorencnn_51_mul41_splitncnn_1 vargface_stage_3_unit_5_sep1_data_conv2d_depthwise 0=320 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=2880 7=160
+BatchNorm        vargface_stage_3_unit_5_sep1_data_conv2d_depthwise_bn 1 1 vargface_stage_3_unit_5_sep1_data_conv2d_depthwise vargface_stage_3_unit_5_sep1_data_conv2d_depthwise_bn 0=320
+Split            splitncnn_57                     1 2 vargface_stage_3_unit_5_sep1_data_conv2d_depthwise_bn vargface_stage_3_unit_5_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_5_sep1_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_5_sep1_data_conv2d_depthwise_act 1 1 vargface_stage_3_unit_5_sep1_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_3_unit_5_sep1_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_52_mul42          2 1 vargface_stage_3_unit_5_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_5_sep1_data_conv2d_depthwise_act underscorencnn_52_mul42 0=2
+Convolution      vargface_stage_3_unit_5_sep1_data_conv2d_pointwise 1 1 underscorencnn_52_mul42 vargface_stage_3_unit_5_sep1_data_conv2d_pointwise 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=51200
+BatchNorm        vargface_stage_3_unit_5_sep1_data_conv2d_pointwise_bn 1 1 vargface_stage_3_unit_5_sep1_data_conv2d_pointwise vargface_stage_3_unit_5_sep1_data_conv2d_pointwise_bn 0=160
+Split            splitncnn_58                     1 2 vargface_stage_3_unit_5_sep1_data_conv2d_pointwise_bn vargface_stage_3_unit_5_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_5_sep1_data_conv2d_pointwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_5_sep1_data_conv2d_pointwise_act 1 1 vargface_stage_3_unit_5_sep1_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_3_unit_5_sep1_data_conv2d_pointwise_act
+BinaryOp         underscorencnn_53_mul43          2 1 vargface_stage_3_unit_5_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_5_sep1_data_conv2d_pointwise_act underscorencnn_53_mul43 0=2
+ConvolutionDepthWise vargface_stage_3_unit_5_sep2_data_conv2d_depthwise 1 1 underscorencnn_53_mul43 vargface_stage_3_unit_5_sep2_data_conv2d_depthwise 0=320 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=2880 7=160
+BatchNorm        vargface_stage_3_unit_5_sep2_data_conv2d_depthwise_bn 1 1 vargface_stage_3_unit_5_sep2_data_conv2d_depthwise vargface_stage_3_unit_5_sep2_data_conv2d_depthwise_bn 0=320
+Split            splitncnn_59                     1 2 vargface_stage_3_unit_5_sep2_data_conv2d_depthwise_bn vargface_stage_3_unit_5_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_5_sep2_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_5_sep2_data_conv2d_depthwise_act 1 1 vargface_stage_3_unit_5_sep2_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_3_unit_5_sep2_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_54_mul44          2 1 vargface_stage_3_unit_5_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_5_sep2_data_conv2d_depthwise_act underscorencnn_54_mul44 0=2
+Convolution      vargface_stage_3_unit_5_sep2_data_conv2d_pointwise 1 1 underscorencnn_54_mul44 vargface_stage_3_unit_5_sep2_data_conv2d_pointwise 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=51200
+BatchNorm        vargface_stage_3_unit_5_sep2_data_conv2d_pointwise_bn 1 1 vargface_stage_3_unit_5_sep2_data_conv2d_pointwise vargface_stage_3_unit_5_sep2_data_conv2d_pointwise_bn 0=160
+Split            splitncnn_60                     1 2 vargface_stage_3_unit_5_sep2_data_conv2d_pointwise_bn vargface_stage_3_unit_5_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_5_sep2_data_conv2d_pointwise_bn_splitncnn_1
+Pooling          vargface_stage_3_unit_5_se_pool1 1 1 vargface_stage_3_unit_5_sep2_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_3_unit_5_se_pool1 0=1 4=1 5=1 6=0
+Convolution      vargface_stage_3_unit_5_se_conv1 1 1 vargface_stage_3_unit_5_se_pool1 vargface_stage_3_unit_5_se_conv1 0=40 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=6400
+Split            splitncnn_61                     1 2 vargface_stage_3_unit_5_se_conv1 vargface_stage_3_unit_5_se_conv1_splitncnn_0 vargface_stage_3_unit_5_se_conv1_splitncnn_1
+Sigmoid          vargface_stage_3_unit_5_se_act1  1 1 vargface_stage_3_unit_5_se_conv1_splitncnn_1 vargface_stage_3_unit_5_se_act1
+BinaryOp         underscorencnn_55_mul45          2 1 vargface_stage_3_unit_5_se_conv1_splitncnn_0 vargface_stage_3_unit_5_se_act1 underscorencnn_55_mul45 0=2
+Convolution      vargface_stage_3_unit_5_se_conv2 1 1 underscorencnn_55_mul45 vargface_stage_3_unit_5_se_conv2 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=6400
+Sigmoid          vargface_stage_3_unit_5_se_sigmoid 1 1 vargface_stage_3_unit_5_se_conv2 vargface_stage_3_unit_5_se_sigmoid
+BinaryOp         broadcast_mul6                   2 1 vargface_stage_3_unit_5_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_5_se_sigmoid broadcast_mul6 0=2
+BinaryOp         underscorencnn_56_plus8          2 1 broadcast_mul6 underscorencnn_51_mul41_splitncnn_0 underscorencnn_56_plus8 0=0
+Split            splitncnn_62                     1 2 underscorencnn_56_plus8 underscorencnn_56_plus8_splitncnn_0 underscorencnn_56_plus8_splitncnn_1
+Sigmoid          vargface_stage_3_unit_5_out_data_act 1 1 underscorencnn_56_plus8_splitncnn_1 vargface_stage_3_unit_5_out_data_act
+BinaryOp         underscorencnn_57_mul46          2 1 underscorencnn_56_plus8_splitncnn_0 vargface_stage_3_unit_5_out_data_act underscorencnn_57_mul46 0=2
+Split            splitncnn_63                     1 2 underscorencnn_57_mul46 underscorencnn_57_mul46_splitncnn_0 underscorencnn_57_mul46_splitncnn_1
+ConvolutionDepthWise vargface_stage_3_unit_6_sep1_data_conv2d_depthwise 1 1 underscorencnn_57_mul46_splitncnn_1 vargface_stage_3_unit_6_sep1_data_conv2d_depthwise 0=320 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=2880 7=160
+BatchNorm        vargface_stage_3_unit_6_sep1_data_conv2d_depthwise_bn 1 1 vargface_stage_3_unit_6_sep1_data_conv2d_depthwise vargface_stage_3_unit_6_sep1_data_conv2d_depthwise_bn 0=320
+Split            splitncnn_64                     1 2 vargface_stage_3_unit_6_sep1_data_conv2d_depthwise_bn vargface_stage_3_unit_6_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_6_sep1_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_6_sep1_data_conv2d_depthwise_act 1 1 vargface_stage_3_unit_6_sep1_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_3_unit_6_sep1_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_58_mul47          2 1 vargface_stage_3_unit_6_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_6_sep1_data_conv2d_depthwise_act underscorencnn_58_mul47 0=2
+Convolution      vargface_stage_3_unit_6_sep1_data_conv2d_pointwise 1 1 underscorencnn_58_mul47 vargface_stage_3_unit_6_sep1_data_conv2d_pointwise 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=51200
+BatchNorm        vargface_stage_3_unit_6_sep1_data_conv2d_pointwise_bn 1 1 vargface_stage_3_unit_6_sep1_data_conv2d_pointwise vargface_stage_3_unit_6_sep1_data_conv2d_pointwise_bn 0=160
+Split            splitncnn_65                     1 2 vargface_stage_3_unit_6_sep1_data_conv2d_pointwise_bn vargface_stage_3_unit_6_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_6_sep1_data_conv2d_pointwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_6_sep1_data_conv2d_pointwise_act 1 1 vargface_stage_3_unit_6_sep1_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_3_unit_6_sep1_data_conv2d_pointwise_act
+BinaryOp         underscorencnn_59_mul48          2 1 vargface_stage_3_unit_6_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_6_sep1_data_conv2d_pointwise_act underscorencnn_59_mul48 0=2
+ConvolutionDepthWise vargface_stage_3_unit_6_sep2_data_conv2d_depthwise 1 1 underscorencnn_59_mul48 vargface_stage_3_unit_6_sep2_data_conv2d_depthwise 0=320 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=2880 7=160
+BatchNorm        vargface_stage_3_unit_6_sep2_data_conv2d_depthwise_bn 1 1 vargface_stage_3_unit_6_sep2_data_conv2d_depthwise vargface_stage_3_unit_6_sep2_data_conv2d_depthwise_bn 0=320
+Split            splitncnn_66                     1 2 vargface_stage_3_unit_6_sep2_data_conv2d_depthwise_bn vargface_stage_3_unit_6_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_6_sep2_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_6_sep2_data_conv2d_depthwise_act 1 1 vargface_stage_3_unit_6_sep2_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_3_unit_6_sep2_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_60_mul49          2 1 vargface_stage_3_unit_6_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_6_sep2_data_conv2d_depthwise_act underscorencnn_60_mul49 0=2
+Convolution      vargface_stage_3_unit_6_sep2_data_conv2d_pointwise 1 1 underscorencnn_60_mul49 vargface_stage_3_unit_6_sep2_data_conv2d_pointwise 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=51200
+BatchNorm        vargface_stage_3_unit_6_sep2_data_conv2d_pointwise_bn 1 1 vargface_stage_3_unit_6_sep2_data_conv2d_pointwise vargface_stage_3_unit_6_sep2_data_conv2d_pointwise_bn 0=160
+Split            splitncnn_67                     1 2 vargface_stage_3_unit_6_sep2_data_conv2d_pointwise_bn vargface_stage_3_unit_6_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_6_sep2_data_conv2d_pointwise_bn_splitncnn_1
+Pooling          vargface_stage_3_unit_6_se_pool1 1 1 vargface_stage_3_unit_6_sep2_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_3_unit_6_se_pool1 0=1 4=1 5=1 6=0
+Convolution      vargface_stage_3_unit_6_se_conv1 1 1 vargface_stage_3_unit_6_se_pool1 vargface_stage_3_unit_6_se_conv1 0=40 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=6400
+Split            splitncnn_68                     1 2 vargface_stage_3_unit_6_se_conv1 vargface_stage_3_unit_6_se_conv1_splitncnn_0 vargface_stage_3_unit_6_se_conv1_splitncnn_1
+Sigmoid          vargface_stage_3_unit_6_se_act1  1 1 vargface_stage_3_unit_6_se_conv1_splitncnn_1 vargface_stage_3_unit_6_se_act1
+BinaryOp         underscorencnn_61_mul50          2 1 vargface_stage_3_unit_6_se_conv1_splitncnn_0 vargface_stage_3_unit_6_se_act1 underscorencnn_61_mul50 0=2
+Convolution      vargface_stage_3_unit_6_se_conv2 1 1 underscorencnn_61_mul50 vargface_stage_3_unit_6_se_conv2 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=6400
+Sigmoid          vargface_stage_3_unit_6_se_sigmoid 1 1 vargface_stage_3_unit_6_se_conv2 vargface_stage_3_unit_6_se_sigmoid
+BinaryOp         broadcast_mul7                   2 1 vargface_stage_3_unit_6_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_6_se_sigmoid broadcast_mul7 0=2
+BinaryOp         underscorencnn_62_plus9          2 1 broadcast_mul7 underscorencnn_57_mul46_splitncnn_0 underscorencnn_62_plus9 0=0
+Split            splitncnn_69                     1 2 underscorencnn_62_plus9 underscorencnn_62_plus9_splitncnn_0 underscorencnn_62_plus9_splitncnn_1
+Sigmoid          vargface_stage_3_unit_6_out_data_act 1 1 underscorencnn_62_plus9_splitncnn_1 vargface_stage_3_unit_6_out_data_act
+BinaryOp         underscorencnn_63_mul51          2 1 underscorencnn_62_plus9_splitncnn_0 vargface_stage_3_unit_6_out_data_act underscorencnn_63_mul51 0=2
+Split            splitncnn_70                     1 2 underscorencnn_63_mul51 underscorencnn_63_mul51_splitncnn_0 underscorencnn_63_mul51_splitncnn_1
+ConvolutionDepthWise vargface_stage_3_unit_7_sep1_data_conv2d_depthwise 1 1 underscorencnn_63_mul51_splitncnn_1 vargface_stage_3_unit_7_sep1_data_conv2d_depthwise 0=320 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=2880 7=160
+BatchNorm        vargface_stage_3_unit_7_sep1_data_conv2d_depthwise_bn 1 1 vargface_stage_3_unit_7_sep1_data_conv2d_depthwise vargface_stage_3_unit_7_sep1_data_conv2d_depthwise_bn 0=320
+Split            splitncnn_71                     1 2 vargface_stage_3_unit_7_sep1_data_conv2d_depthwise_bn vargface_stage_3_unit_7_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_7_sep1_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_7_sep1_data_conv2d_depthwise_act 1 1 vargface_stage_3_unit_7_sep1_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_3_unit_7_sep1_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_64_mul52          2 1 vargface_stage_3_unit_7_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_7_sep1_data_conv2d_depthwise_act underscorencnn_64_mul52 0=2
+Convolution      vargface_stage_3_unit_7_sep1_data_conv2d_pointwise 1 1 underscorencnn_64_mul52 vargface_stage_3_unit_7_sep1_data_conv2d_pointwise 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=51200
+BatchNorm        vargface_stage_3_unit_7_sep1_data_conv2d_pointwise_bn 1 1 vargface_stage_3_unit_7_sep1_data_conv2d_pointwise vargface_stage_3_unit_7_sep1_data_conv2d_pointwise_bn 0=160
+Split            splitncnn_72                     1 2 vargface_stage_3_unit_7_sep1_data_conv2d_pointwise_bn vargface_stage_3_unit_7_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_7_sep1_data_conv2d_pointwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_7_sep1_data_conv2d_pointwise_act 1 1 vargface_stage_3_unit_7_sep1_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_3_unit_7_sep1_data_conv2d_pointwise_act
+BinaryOp         underscorencnn_65_mul53          2 1 vargface_stage_3_unit_7_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_7_sep1_data_conv2d_pointwise_act underscorencnn_65_mul53 0=2
+ConvolutionDepthWise vargface_stage_3_unit_7_sep2_data_conv2d_depthwise 1 1 underscorencnn_65_mul53 vargface_stage_3_unit_7_sep2_data_conv2d_depthwise 0=320 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=2880 7=160
+BatchNorm        vargface_stage_3_unit_7_sep2_data_conv2d_depthwise_bn 1 1 vargface_stage_3_unit_7_sep2_data_conv2d_depthwise vargface_stage_3_unit_7_sep2_data_conv2d_depthwise_bn 0=320
+Split            splitncnn_73                     1 2 vargface_stage_3_unit_7_sep2_data_conv2d_depthwise_bn vargface_stage_3_unit_7_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_7_sep2_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_3_unit_7_sep2_data_conv2d_depthwise_act 1 1 vargface_stage_3_unit_7_sep2_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_3_unit_7_sep2_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_66_mul54          2 1 vargface_stage_3_unit_7_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_3_unit_7_sep2_data_conv2d_depthwise_act underscorencnn_66_mul54 0=2
+Convolution      vargface_stage_3_unit_7_sep2_data_conv2d_pointwise 1 1 underscorencnn_66_mul54 vargface_stage_3_unit_7_sep2_data_conv2d_pointwise 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=51200
+BatchNorm        vargface_stage_3_unit_7_sep2_data_conv2d_pointwise_bn 1 1 vargface_stage_3_unit_7_sep2_data_conv2d_pointwise vargface_stage_3_unit_7_sep2_data_conv2d_pointwise_bn 0=160
+Split            splitncnn_74                     1 2 vargface_stage_3_unit_7_sep2_data_conv2d_pointwise_bn vargface_stage_3_unit_7_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_7_sep2_data_conv2d_pointwise_bn_splitncnn_1
+Pooling          vargface_stage_3_unit_7_se_pool1 1 1 vargface_stage_3_unit_7_sep2_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_3_unit_7_se_pool1 0=1 4=1 5=1 6=0
+Convolution      vargface_stage_3_unit_7_se_conv1 1 1 vargface_stage_3_unit_7_se_pool1 vargface_stage_3_unit_7_se_conv1 0=40 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=6400
+Split            splitncnn_75                     1 2 vargface_stage_3_unit_7_se_conv1 vargface_stage_3_unit_7_se_conv1_splitncnn_0 vargface_stage_3_unit_7_se_conv1_splitncnn_1
+Sigmoid          vargface_stage_3_unit_7_se_act1  1 1 vargface_stage_3_unit_7_se_conv1_splitncnn_1 vargface_stage_3_unit_7_se_act1
+BinaryOp         underscorencnn_67_mul55          2 1 vargface_stage_3_unit_7_se_conv1_splitncnn_0 vargface_stage_3_unit_7_se_act1 underscorencnn_67_mul55 0=2
+Convolution      vargface_stage_3_unit_7_se_conv2 1 1 underscorencnn_67_mul55 vargface_stage_3_unit_7_se_conv2 0=160 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=6400
+Sigmoid          vargface_stage_3_unit_7_se_sigmoid 1 1 vargface_stage_3_unit_7_se_conv2 vargface_stage_3_unit_7_se_sigmoid
+BinaryOp         broadcast_mul8                   2 1 vargface_stage_3_unit_7_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_3_unit_7_se_sigmoid broadcast_mul8 0=2
+BinaryOp         underscorencnn_68_plus10         2 1 broadcast_mul8 underscorencnn_63_mul51_splitncnn_0 underscorencnn_68_plus10 0=0
+Split            splitncnn_76                     1 2 underscorencnn_68_plus10 underscorencnn_68_plus10_splitncnn_0 underscorencnn_68_plus10_splitncnn_1
+Sigmoid          vargface_stage_3_unit_7_out_data_act 1 1 underscorencnn_68_plus10_splitncnn_1 vargface_stage_3_unit_7_out_data_act
+BinaryOp         underscorencnn_69_mul56          2 1 underscorencnn_68_plus10_splitncnn_0 vargface_stage_3_unit_7_out_data_act underscorencnn_69_mul56 0=2
+Split            splitncnn_77                     1 2 underscorencnn_69_mul56 underscorencnn_69_mul56_splitncnn_0 underscorencnn_69_mul56_splitncnn_1
+ConvolutionDepthWise vargface_stage_4_unit_1_sep1_data_branch_conv2d_depthwise 1 1 underscorencnn_69_mul56_splitncnn_1 vargface_stage_4_unit_1_sep1_data_branch_conv2d_depthwise 0=320 1=3 11=3 2=1 12=1 3=2 13=2 4=1 14=1 5=0 6=2880 7=160
+BatchNorm        vargface_stage_4_unit_1_sep1_data_branch_conv2d_depthwise_bn 1 1 vargface_stage_4_unit_1_sep1_data_branch_conv2d_depthwise vargface_stage_4_unit_1_sep1_data_branch_conv2d_depthwise_bn 0=320
+Split            splitncnn_78                     1 2 vargface_stage_4_unit_1_sep1_data_branch_conv2d_depthwise_bn vargface_stage_4_unit_1_sep1_data_branch_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_1_sep1_data_branch_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_4_unit_1_sep1_data_branch_conv2d_depthwise_act 1 1 vargface_stage_4_unit_1_sep1_data_branch_conv2d_depthwise_bn_splitncnn_1 vargface_stage_4_unit_1_sep1_data_branch_conv2d_depthwise_act
+BinaryOp         underscorencnn_70_mul58          2 1 vargface_stage_4_unit_1_sep1_data_branch_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_1_sep1_data_branch_conv2d_depthwise_act underscorencnn_70_mul58 0=2
+Convolution      vargface_stage_4_unit_1_sep1_data_branch_conv2d_pointwise 1 1 underscorencnn_70_mul58 vargface_stage_4_unit_1_sep1_data_branch_conv2d_pointwise 0=320 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=102400
+BatchNorm        vargface_stage_4_unit_1_sep1_data_branch_conv2d_pointwise_bn 1 1 vargface_stage_4_unit_1_sep1_data_branch_conv2d_pointwise vargface_stage_4_unit_1_sep1_data_branch_conv2d_pointwise_bn 0=320
+Split            splitncnn_79                     1 2 vargface_stage_4_unit_1_sep1_data_branch_conv2d_pointwise_bn vargface_stage_4_unit_1_sep1_data_branch_conv2d_pointwise_bn_splitncnn_0 vargface_stage_4_unit_1_sep1_data_branch_conv2d_pointwise_bn_splitncnn_1
+Sigmoid          vargface_stage_4_unit_1_sep1_data_act 1 1 vargface_stage_4_unit_1_sep1_data_branch_conv2d_pointwise_bn_splitncnn_1 vargface_stage_4_unit_1_sep1_data_act
+BinaryOp         underscorencnn_71_mul59          2 1 vargface_stage_4_unit_1_sep1_data_branch_conv2d_pointwise_bn_splitncnn_0 vargface_stage_4_unit_1_sep1_data_act underscorencnn_71_mul59 0=2
+ConvolutionDepthWise vargface_stage_4_unit_1_sep2_data_conv2d_depthwise 1 1 underscorencnn_71_mul59 vargface_stage_4_unit_1_sep2_data_conv2d_depthwise 0=640 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=5760 7=320
+BatchNorm        vargface_stage_4_unit_1_sep2_data_conv2d_depthwise_bn 1 1 vargface_stage_4_unit_1_sep2_data_conv2d_depthwise vargface_stage_4_unit_1_sep2_data_conv2d_depthwise_bn 0=640
+Split            splitncnn_80                     1 2 vargface_stage_4_unit_1_sep2_data_conv2d_depthwise_bn vargface_stage_4_unit_1_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_1_sep2_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_4_unit_1_sep2_data_conv2d_depthwise_act 1 1 vargface_stage_4_unit_1_sep2_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_4_unit_1_sep2_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_72_mul60          2 1 vargface_stage_4_unit_1_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_1_sep2_data_conv2d_depthwise_act underscorencnn_72_mul60 0=2
+Convolution      vargface_stage_4_unit_1_sep2_data_conv2d_pointwise 1 1 underscorencnn_72_mul60 vargface_stage_4_unit_1_sep2_data_conv2d_pointwise 0=320 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=204800
+BatchNorm        vargface_stage_4_unit_1_sep2_data_conv2d_pointwise_bn 1 1 vargface_stage_4_unit_1_sep2_data_conv2d_pointwise vargface_stage_4_unit_1_sep2_data_conv2d_pointwise_bn 0=320
+ConvolutionDepthWise vargface_stage_4_unit_1_shortcut_conv2d_depthwise 1 1 underscorencnn_69_mul56_splitncnn_0 vargface_stage_4_unit_1_shortcut_conv2d_depthwise 0=320 1=3 11=3 2=1 12=1 3=2 13=2 4=1 14=1 5=0 6=2880 7=160
+BatchNorm        vargface_stage_4_unit_1_shortcut_conv2d_depthwise_bn 1 1 vargface_stage_4_unit_1_shortcut_conv2d_depthwise vargface_stage_4_unit_1_shortcut_conv2d_depthwise_bn 0=320
+Split            splitncnn_81                     1 2 vargface_stage_4_unit_1_shortcut_conv2d_depthwise_bn vargface_stage_4_unit_1_shortcut_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_1_shortcut_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_4_unit_1_shortcut_conv2d_depthwise_act 1 1 vargface_stage_4_unit_1_shortcut_conv2d_depthwise_bn_splitncnn_1 vargface_stage_4_unit_1_shortcut_conv2d_depthwise_act
+BinaryOp         underscorencnn_73_mul57          2 1 vargface_stage_4_unit_1_shortcut_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_1_shortcut_conv2d_depthwise_act underscorencnn_73_mul57 0=2
+Convolution      vargface_stage_4_unit_1_shortcut_conv2d_pointwise 1 1 underscorencnn_73_mul57 vargface_stage_4_unit_1_shortcut_conv2d_pointwise 0=320 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=102400
+BatchNorm        vargface_stage_4_unit_1_shortcut_conv2d_pointwise_bn 1 1 vargface_stage_4_unit_1_shortcut_conv2d_pointwise vargface_stage_4_unit_1_shortcut_conv2d_pointwise_bn 0=320
+BinaryOp         underscorencnn_74_plus11         2 1 vargface_stage_4_unit_1_sep2_data_conv2d_pointwise_bn vargface_stage_4_unit_1_shortcut_conv2d_pointwise_bn underscorencnn_74_plus11 0=0
+Split            splitncnn_82                     1 2 underscorencnn_74_plus11 underscorencnn_74_plus11_splitncnn_0 underscorencnn_74_plus11_splitncnn_1
+Sigmoid          vargface_stage_4_unit_1_out_data_act 1 1 underscorencnn_74_plus11_splitncnn_1 vargface_stage_4_unit_1_out_data_act
+BinaryOp         underscorencnn_75_mul61          2 1 underscorencnn_74_plus11_splitncnn_0 vargface_stage_4_unit_1_out_data_act underscorencnn_75_mul61 0=2
+Split            splitncnn_83                     1 2 underscorencnn_75_mul61 underscorencnn_75_mul61_splitncnn_0 underscorencnn_75_mul61_splitncnn_1
+ConvolutionDepthWise vargface_stage_4_unit_2_sep1_data_conv2d_depthwise 1 1 underscorencnn_75_mul61_splitncnn_1 vargface_stage_4_unit_2_sep1_data_conv2d_depthwise 0=640 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=5760 7=320
+BatchNorm        vargface_stage_4_unit_2_sep1_data_conv2d_depthwise_bn 1 1 vargface_stage_4_unit_2_sep1_data_conv2d_depthwise vargface_stage_4_unit_2_sep1_data_conv2d_depthwise_bn 0=640
+Split            splitncnn_84                     1 2 vargface_stage_4_unit_2_sep1_data_conv2d_depthwise_bn vargface_stage_4_unit_2_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_2_sep1_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_4_unit_2_sep1_data_conv2d_depthwise_act 1 1 vargface_stage_4_unit_2_sep1_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_4_unit_2_sep1_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_76_mul62          2 1 vargface_stage_4_unit_2_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_2_sep1_data_conv2d_depthwise_act underscorencnn_76_mul62 0=2
+Convolution      vargface_stage_4_unit_2_sep1_data_conv2d_pointwise 1 1 underscorencnn_76_mul62 vargface_stage_4_unit_2_sep1_data_conv2d_pointwise 0=320 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=204800
+BatchNorm        vargface_stage_4_unit_2_sep1_data_conv2d_pointwise_bn 1 1 vargface_stage_4_unit_2_sep1_data_conv2d_pointwise vargface_stage_4_unit_2_sep1_data_conv2d_pointwise_bn 0=320
+Split            splitncnn_85                     1 2 vargface_stage_4_unit_2_sep1_data_conv2d_pointwise_bn vargface_stage_4_unit_2_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_4_unit_2_sep1_data_conv2d_pointwise_bn_splitncnn_1
+Sigmoid          vargface_stage_4_unit_2_sep1_data_conv2d_pointwise_act 1 1 vargface_stage_4_unit_2_sep1_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_4_unit_2_sep1_data_conv2d_pointwise_act
+BinaryOp         underscorencnn_77_mul63          2 1 vargface_stage_4_unit_2_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_4_unit_2_sep1_data_conv2d_pointwise_act underscorencnn_77_mul63 0=2
+ConvolutionDepthWise vargface_stage_4_unit_2_sep2_data_conv2d_depthwise 1 1 underscorencnn_77_mul63 vargface_stage_4_unit_2_sep2_data_conv2d_depthwise 0=640 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=5760 7=320
+BatchNorm        vargface_stage_4_unit_2_sep2_data_conv2d_depthwise_bn 1 1 vargface_stage_4_unit_2_sep2_data_conv2d_depthwise vargface_stage_4_unit_2_sep2_data_conv2d_depthwise_bn 0=640
+Split            splitncnn_86                     1 2 vargface_stage_4_unit_2_sep2_data_conv2d_depthwise_bn vargface_stage_4_unit_2_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_2_sep2_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_4_unit_2_sep2_data_conv2d_depthwise_act 1 1 vargface_stage_4_unit_2_sep2_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_4_unit_2_sep2_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_78_mul64          2 1 vargface_stage_4_unit_2_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_2_sep2_data_conv2d_depthwise_act underscorencnn_78_mul64 0=2
+Convolution      vargface_stage_4_unit_2_sep2_data_conv2d_pointwise 1 1 underscorencnn_78_mul64 vargface_stage_4_unit_2_sep2_data_conv2d_pointwise 0=320 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=204800
+BatchNorm        vargface_stage_4_unit_2_sep2_data_conv2d_pointwise_bn 1 1 vargface_stage_4_unit_2_sep2_data_conv2d_pointwise vargface_stage_4_unit_2_sep2_data_conv2d_pointwise_bn 0=320
+Split            splitncnn_87                     1 2 vargface_stage_4_unit_2_sep2_data_conv2d_pointwise_bn vargface_stage_4_unit_2_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_4_unit_2_sep2_data_conv2d_pointwise_bn_splitncnn_1
+Pooling          vargface_stage_4_unit_2_se_pool1 1 1 vargface_stage_4_unit_2_sep2_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_4_unit_2_se_pool1 0=1 4=1 5=1 6=0
+Convolution      vargface_stage_4_unit_2_se_conv1 1 1 vargface_stage_4_unit_2_se_pool1 vargface_stage_4_unit_2_se_conv1 0=80 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=25600
+Split            splitncnn_88                     1 2 vargface_stage_4_unit_2_se_conv1 vargface_stage_4_unit_2_se_conv1_splitncnn_0 vargface_stage_4_unit_2_se_conv1_splitncnn_1
+Sigmoid          vargface_stage_4_unit_2_se_act1  1 1 vargface_stage_4_unit_2_se_conv1_splitncnn_1 vargface_stage_4_unit_2_se_act1
+BinaryOp         underscorencnn_79_mul65          2 1 vargface_stage_4_unit_2_se_conv1_splitncnn_0 vargface_stage_4_unit_2_se_act1 underscorencnn_79_mul65 0=2
+Convolution      vargface_stage_4_unit_2_se_conv2 1 1 underscorencnn_79_mul65 vargface_stage_4_unit_2_se_conv2 0=320 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=25600
+Sigmoid          vargface_stage_4_unit_2_se_sigmoid 1 1 vargface_stage_4_unit_2_se_conv2 vargface_stage_4_unit_2_se_sigmoid
+BinaryOp         broadcast_mul9                   2 1 vargface_stage_4_unit_2_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_4_unit_2_se_sigmoid broadcast_mul9 0=2
+BinaryOp         underscorencnn_80_plus12         2 1 broadcast_mul9 underscorencnn_75_mul61_splitncnn_0 underscorencnn_80_plus12 0=0
+Split            splitncnn_89                     1 2 underscorencnn_80_plus12 underscorencnn_80_plus12_splitncnn_0 underscorencnn_80_plus12_splitncnn_1
+Sigmoid          vargface_stage_4_unit_2_out_data_act 1 1 underscorencnn_80_plus12_splitncnn_1 vargface_stage_4_unit_2_out_data_act
+BinaryOp         underscorencnn_81_mul66          2 1 underscorencnn_80_plus12_splitncnn_0 vargface_stage_4_unit_2_out_data_act underscorencnn_81_mul66 0=2
+Split            splitncnn_90                     1 2 underscorencnn_81_mul66 underscorencnn_81_mul66_splitncnn_0 underscorencnn_81_mul66_splitncnn_1
+ConvolutionDepthWise vargface_stage_4_unit_3_sep1_data_conv2d_depthwise 1 1 underscorencnn_81_mul66_splitncnn_1 vargface_stage_4_unit_3_sep1_data_conv2d_depthwise 0=640 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=5760 7=320
+BatchNorm        vargface_stage_4_unit_3_sep1_data_conv2d_depthwise_bn 1 1 vargface_stage_4_unit_3_sep1_data_conv2d_depthwise vargface_stage_4_unit_3_sep1_data_conv2d_depthwise_bn 0=640
+Split            splitncnn_91                     1 2 vargface_stage_4_unit_3_sep1_data_conv2d_depthwise_bn vargface_stage_4_unit_3_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_3_sep1_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_4_unit_3_sep1_data_conv2d_depthwise_act 1 1 vargface_stage_4_unit_3_sep1_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_4_unit_3_sep1_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_82_mul67          2 1 vargface_stage_4_unit_3_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_3_sep1_data_conv2d_depthwise_act underscorencnn_82_mul67 0=2
+Convolution      vargface_stage_4_unit_3_sep1_data_conv2d_pointwise 1 1 underscorencnn_82_mul67 vargface_stage_4_unit_3_sep1_data_conv2d_pointwise 0=320 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=204800
+BatchNorm        vargface_stage_4_unit_3_sep1_data_conv2d_pointwise_bn 1 1 vargface_stage_4_unit_3_sep1_data_conv2d_pointwise vargface_stage_4_unit_3_sep1_data_conv2d_pointwise_bn 0=320
+Split            splitncnn_92                     1 2 vargface_stage_4_unit_3_sep1_data_conv2d_pointwise_bn vargface_stage_4_unit_3_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_4_unit_3_sep1_data_conv2d_pointwise_bn_splitncnn_1
+Sigmoid          vargface_stage_4_unit_3_sep1_data_conv2d_pointwise_act 1 1 vargface_stage_4_unit_3_sep1_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_4_unit_3_sep1_data_conv2d_pointwise_act
+BinaryOp         underscorencnn_83_mul68          2 1 vargface_stage_4_unit_3_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_4_unit_3_sep1_data_conv2d_pointwise_act underscorencnn_83_mul68 0=2
+ConvolutionDepthWise vargface_stage_4_unit_3_sep2_data_conv2d_depthwise 1 1 underscorencnn_83_mul68 vargface_stage_4_unit_3_sep2_data_conv2d_depthwise 0=640 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=5760 7=320
+BatchNorm        vargface_stage_4_unit_3_sep2_data_conv2d_depthwise_bn 1 1 vargface_stage_4_unit_3_sep2_data_conv2d_depthwise vargface_stage_4_unit_3_sep2_data_conv2d_depthwise_bn 0=640
+Split            splitncnn_93                     1 2 vargface_stage_4_unit_3_sep2_data_conv2d_depthwise_bn vargface_stage_4_unit_3_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_3_sep2_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_4_unit_3_sep2_data_conv2d_depthwise_act 1 1 vargface_stage_4_unit_3_sep2_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_4_unit_3_sep2_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_84_mul69          2 1 vargface_stage_4_unit_3_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_3_sep2_data_conv2d_depthwise_act underscorencnn_84_mul69 0=2
+Convolution      vargface_stage_4_unit_3_sep2_data_conv2d_pointwise 1 1 underscorencnn_84_mul69 vargface_stage_4_unit_3_sep2_data_conv2d_pointwise 0=320 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=204800
+BatchNorm        vargface_stage_4_unit_3_sep2_data_conv2d_pointwise_bn 1 1 vargface_stage_4_unit_3_sep2_data_conv2d_pointwise vargface_stage_4_unit_3_sep2_data_conv2d_pointwise_bn 0=320
+Split            splitncnn_94                     1 2 vargface_stage_4_unit_3_sep2_data_conv2d_pointwise_bn vargface_stage_4_unit_3_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_4_unit_3_sep2_data_conv2d_pointwise_bn_splitncnn_1
+Pooling          vargface_stage_4_unit_3_se_pool1 1 1 vargface_stage_4_unit_3_sep2_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_4_unit_3_se_pool1 0=1 4=1 5=1 6=0
+Convolution      vargface_stage_4_unit_3_se_conv1 1 1 vargface_stage_4_unit_3_se_pool1 vargface_stage_4_unit_3_se_conv1 0=80 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=25600
+Split            splitncnn_95                     1 2 vargface_stage_4_unit_3_se_conv1 vargface_stage_4_unit_3_se_conv1_splitncnn_0 vargface_stage_4_unit_3_se_conv1_splitncnn_1
+Sigmoid          vargface_stage_4_unit_3_se_act1  1 1 vargface_stage_4_unit_3_se_conv1_splitncnn_1 vargface_stage_4_unit_3_se_act1
+BinaryOp         underscorencnn_85_mul70          2 1 vargface_stage_4_unit_3_se_conv1_splitncnn_0 vargface_stage_4_unit_3_se_act1 underscorencnn_85_mul70 0=2
+Convolution      vargface_stage_4_unit_3_se_conv2 1 1 underscorencnn_85_mul70 vargface_stage_4_unit_3_se_conv2 0=320 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=25600
+Sigmoid          vargface_stage_4_unit_3_se_sigmoid 1 1 vargface_stage_4_unit_3_se_conv2 vargface_stage_4_unit_3_se_sigmoid
+BinaryOp         broadcast_mul10                  2 1 vargface_stage_4_unit_3_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_4_unit_3_se_sigmoid broadcast_mul10 0=2
+BinaryOp         underscorencnn_86_plus13         2 1 broadcast_mul10 underscorencnn_81_mul66_splitncnn_0 underscorencnn_86_plus13 0=0
+Split            splitncnn_96                     1 2 underscorencnn_86_plus13 underscorencnn_86_plus13_splitncnn_0 underscorencnn_86_plus13_splitncnn_1
+Sigmoid          vargface_stage_4_unit_3_out_data_act 1 1 underscorencnn_86_plus13_splitncnn_1 vargface_stage_4_unit_3_out_data_act
+BinaryOp         underscorencnn_87_mul71          2 1 underscorencnn_86_plus13_splitncnn_0 vargface_stage_4_unit_3_out_data_act underscorencnn_87_mul71 0=2
+Split            splitncnn_97                     1 2 underscorencnn_87_mul71 underscorencnn_87_mul71_splitncnn_0 underscorencnn_87_mul71_splitncnn_1
+ConvolutionDepthWise vargface_stage_4_unit_4_sep1_data_conv2d_depthwise 1 1 underscorencnn_87_mul71_splitncnn_1 vargface_stage_4_unit_4_sep1_data_conv2d_depthwise 0=640 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=5760 7=320
+BatchNorm        vargface_stage_4_unit_4_sep1_data_conv2d_depthwise_bn 1 1 vargface_stage_4_unit_4_sep1_data_conv2d_depthwise vargface_stage_4_unit_4_sep1_data_conv2d_depthwise_bn 0=640
+Split            splitncnn_98                     1 2 vargface_stage_4_unit_4_sep1_data_conv2d_depthwise_bn vargface_stage_4_unit_4_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_4_sep1_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_4_unit_4_sep1_data_conv2d_depthwise_act 1 1 vargface_stage_4_unit_4_sep1_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_4_unit_4_sep1_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_88_mul72          2 1 vargface_stage_4_unit_4_sep1_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_4_sep1_data_conv2d_depthwise_act underscorencnn_88_mul72 0=2
+Convolution      vargface_stage_4_unit_4_sep1_data_conv2d_pointwise 1 1 underscorencnn_88_mul72 vargface_stage_4_unit_4_sep1_data_conv2d_pointwise 0=320 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=204800
+BatchNorm        vargface_stage_4_unit_4_sep1_data_conv2d_pointwise_bn 1 1 vargface_stage_4_unit_4_sep1_data_conv2d_pointwise vargface_stage_4_unit_4_sep1_data_conv2d_pointwise_bn 0=320
+Split            splitncnn_99                     1 2 vargface_stage_4_unit_4_sep1_data_conv2d_pointwise_bn vargface_stage_4_unit_4_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_4_unit_4_sep1_data_conv2d_pointwise_bn_splitncnn_1
+Sigmoid          vargface_stage_4_unit_4_sep1_data_conv2d_pointwise_act 1 1 vargface_stage_4_unit_4_sep1_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_4_unit_4_sep1_data_conv2d_pointwise_act
+BinaryOp         underscorencnn_89_mul73          2 1 vargface_stage_4_unit_4_sep1_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_4_unit_4_sep1_data_conv2d_pointwise_act underscorencnn_89_mul73 0=2
+ConvolutionDepthWise vargface_stage_4_unit_4_sep2_data_conv2d_depthwise 1 1 underscorencnn_89_mul73 vargface_stage_4_unit_4_sep2_data_conv2d_depthwise 0=640 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 5=0 6=5760 7=320
+BatchNorm        vargface_stage_4_unit_4_sep2_data_conv2d_depthwise_bn 1 1 vargface_stage_4_unit_4_sep2_data_conv2d_depthwise vargface_stage_4_unit_4_sep2_data_conv2d_depthwise_bn 0=640
+Split            splitncnn_100                    1 2 vargface_stage_4_unit_4_sep2_data_conv2d_depthwise_bn vargface_stage_4_unit_4_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_4_sep2_data_conv2d_depthwise_bn_splitncnn_1
+Sigmoid          vargface_stage_4_unit_4_sep2_data_conv2d_depthwise_act 1 1 vargface_stage_4_unit_4_sep2_data_conv2d_depthwise_bn_splitncnn_1 vargface_stage_4_unit_4_sep2_data_conv2d_depthwise_act
+BinaryOp         underscorencnn_90_mul74          2 1 vargface_stage_4_unit_4_sep2_data_conv2d_depthwise_bn_splitncnn_0 vargface_stage_4_unit_4_sep2_data_conv2d_depthwise_act underscorencnn_90_mul74 0=2
+Convolution      vargface_stage_4_unit_4_sep2_data_conv2d_pointwise 1 1 underscorencnn_90_mul74 vargface_stage_4_unit_4_sep2_data_conv2d_pointwise 0=320 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=204800
+BatchNorm        vargface_stage_4_unit_4_sep2_data_conv2d_pointwise_bn 1 1 vargface_stage_4_unit_4_sep2_data_conv2d_pointwise vargface_stage_4_unit_4_sep2_data_conv2d_pointwise_bn 0=320
+Split            splitncnn_101                    1 2 vargface_stage_4_unit_4_sep2_data_conv2d_pointwise_bn vargface_stage_4_unit_4_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_4_unit_4_sep2_data_conv2d_pointwise_bn_splitncnn_1
+Pooling          vargface_stage_4_unit_4_se_pool1 1 1 vargface_stage_4_unit_4_sep2_data_conv2d_pointwise_bn_splitncnn_1 vargface_stage_4_unit_4_se_pool1 0=1 4=1 5=1 6=0
+Convolution      vargface_stage_4_unit_4_se_conv1 1 1 vargface_stage_4_unit_4_se_pool1 vargface_stage_4_unit_4_se_conv1 0=80 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=25600
+Split            splitncnn_102                    1 2 vargface_stage_4_unit_4_se_conv1 vargface_stage_4_unit_4_se_conv1_splitncnn_0 vargface_stage_4_unit_4_se_conv1_splitncnn_1
+Sigmoid          vargface_stage_4_unit_4_se_act1  1 1 vargface_stage_4_unit_4_se_conv1_splitncnn_1 vargface_stage_4_unit_4_se_act1
+BinaryOp         underscorencnn_91_mul75          2 1 vargface_stage_4_unit_4_se_conv1_splitncnn_0 vargface_stage_4_unit_4_se_act1 underscorencnn_91_mul75 0=2
+Convolution      vargface_stage_4_unit_4_se_conv2 1 1 underscorencnn_91_mul75 vargface_stage_4_unit_4_se_conv2 0=320 1=1 11=1 3=1 13=1 4=0 14=0 5=1 6=25600
+Sigmoid          vargface_stage_4_unit_4_se_sigmoid 1 1 vargface_stage_4_unit_4_se_conv2 vargface_stage_4_unit_4_se_sigmoid
+BinaryOp         broadcast_mul11                  2 1 vargface_stage_4_unit_4_sep2_data_conv2d_pointwise_bn_splitncnn_0 vargface_stage_4_unit_4_se_sigmoid broadcast_mul11 0=2
+BinaryOp         underscorencnn_92_plus14         2 1 broadcast_mul11 underscorencnn_87_mul71_splitncnn_0 underscorencnn_92_plus14 0=0
+Split            splitncnn_103                    1 2 underscorencnn_92_plus14 underscorencnn_92_plus14_splitncnn_0 underscorencnn_92_plus14_splitncnn_1
+Sigmoid          vargface_stage_4_unit_4_out_data_act 1 1 underscorencnn_92_plus14_splitncnn_1 vargface_stage_4_unit_4_out_data_act
+BinaryOp         underscorencnn_93_mul76          2 1 underscorencnn_92_plus14_splitncnn_0 vargface_stage_4_unit_4_out_data_act underscorencnn_93_mul76 0=2
+Convolution      embed_convx                      1 1 underscorencnn_93_mul76 embed_convx 0=1024 1=1 11=1 3=1 13=1 4=0 14=0 5=0 6=327680
+BatchNorm        embed_convx_bn                   1 1 embed_convx embed_convx_bn 0=1024
+Split            splitncnn_104                    1 2 embed_convx_bn embed_convx_bn_splitncnn_0 embed_convx_bn_splitncnn_1
+Sigmoid          embed_convx_act                  1 1 embed_convx_bn_splitncnn_1 embed_convx_act
+BinaryOp         underscorencnn_94_mul77          2 1 embed_convx_bn_splitncnn_0 embed_convx_act underscorencnn_94_mul77 0=2
+ConvolutionDepthWise embed_convx_depthwise            1 1 underscorencnn_94_mul77 embed_convx_depthwise 0=1024 1=7 11=7 3=1 13=1 4=0 14=0 5=0 6=50176 7=1024
+BatchNorm        embed_convx_depthwise_bn         1 1 embed_convx_depthwise embed_convx_depthwise_bn 0=1024
+Split            splitncnn_105                    1 2 embed_convx_depthwise_bn embed_convx_depthwise_bn_splitncnn_0 embed_convx_depthwise_bn_splitncnn_1
+Sigmoid          embed_convx_depthwise_act        1 1 embed_convx_depthwise_bn_splitncnn_1 embed_convx_depthwise_act
+BinaryOp         underscorencnn_95_mul78          2 1 embed_convx_depthwise_bn_splitncnn_0 embed_convx_depthwise_act underscorencnn_95_mul78 0=2
+InnerProduct     pre_fc1                          1 1 underscorencnn_95_mul78 pre_fc1 0=512 1=1 2=524288
+BatchNorm        fc1                              1 1 pre_fc1 fc1 0=512

@@ -1,0 +1,12 @@
+﻿  vf_main.cpp
+D:\vscode\vf_main\vf_main\vf_main.cpp(128,12): warning C4566: 由通用字符名称“\uFFFD”表示的字符不能在当前代码页(936)中表示出来
+D:\vscode\vf_main\vf_main\vf_main.cpp(128,12): warning C4566: 由通用字符名称“\u017D”表示的字符不能在当前代码页(936)中表示出来
+D:\vscode\vf_main\vf_main\vf_main.cpp(128,12): warning C4566: 由通用字符名称“\u03AA”表示的字符不能在当前代码页(936)中表示出来
+D:\vscode\vf_main\vf_main\vf_main.cpp(129,12): warning C4566: 由通用字符名称“\uFFFD”表示的字符不能在当前代码页(936)中表示出来
+D:\vscode\vf_main\vf_main\vf_main.cpp(129,12): warning C4566: 由通用字符名称“\u03AA”表示的字符不能在当前代码页(936)中表示出来
+  正在生成代码
+  1 of 14 functions ( 7.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  vf_main.vcxproj -> D:\vscode\vf_main\x64\Release\vf_main.exe
